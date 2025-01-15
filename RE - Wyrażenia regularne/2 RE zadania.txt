@@ -1,0 +1,100 @@
+Zadanie 1: Walidacja adresu e-mail
+Opis: Stwórz wyrażenie regularne, które dopasuje poprawne adresy e-mail. Adres e-mail składa się z:
+
+Nazwy użytkownika (litery, cyfry, kropka, myślnik, podkreślnik),
+Znaku "@",
+Nazwy domeny (litery i cyfry),
+Kropki ".",
+Rozszerzenia domeny (minimum 2 litery).
+
+Przykłady:
+user.name123@domain.com — dopasowane
+us-er_456@sub-domain.co — dopasowane
+user@domain — nie dopasowane
+@domain.com — nie dopasowane
+
+
+
+Zadanie 2: Wyszukiwanie liczb
+Opis: Utwórz wyrażenie regularne, które znajduje wszystkie liczby w ciągu tekstowym. Liczby mogą być dodatnie i mogą zawierać przecinki lub kropki w celu oddzielenia tysięcy.
+Przykłady:
+Dla ciągu "Rok 2025, cena to 10,000.99 zł" powinno znaleźć: 2025, 10000.99.
+
+
+
+Zadanie 3: Sprawdzenie numeru telefonu
+Opis: Napisz wyrażenie regularne, które dopasuje polski numer telefonu w formacie: +48 123 456 789, gdzie:
+Prefiks kraju ma 2 cyfry poprzedzone znakiem +,
+Po prefiksie kraju są trzy grupy po trzy cyfry, oddzielone spacjami.
+Przykłady:
++48 123 456 789 — dopasowane
++1 123 456 789 — nie dopasowane (numer nie zaczyna się od +48)
++48 123 45 789 — nie dopasowane (nieprawidłowy format)
+
+
+
+Zadanie 4: Wyszukiwanie daty w formacie DD/MM/YYYY
+Opis: Napisz wyrażenie regularne, które dopasuje daty w formacie dzień/miesiąc/rok (np. 25/12/2025).
+Przykłady:
+25/12/2025 — dopasowane
+9/5/2025 — dopasowane
+12-05-2025 — nie dopasowane (niepoprawny separator)
+32/12/2025 — nie dopasowane (niedopuszczalny dzień)
+
+
+
+Zadanie 5: Usuwanie zbędnych spacji
+Opis: Stwórz wyrażenie regularne, które usunie nadmiarowe spacje w ciągu tekstowym (np. nadmiarowe spacje na początku, końcu oraz wielokrotne spacje między słowami).
+Przykłady:
+" Hello world! " — po usunięciu zbędnych spacji: "Hello world!"
+" A quick brown fox " — po usunięciu: "A quick brown fox"
+
+
+
+Zadanie 6: Numeracja punktów w liście
+Opis: Napisz wyrażenie regularne, które znajdzie numerację punktów w liście z użyciem kropki, np. 1., 2., itd., z opcjonalnym odstępem po kropce.
+Przykłady:
+1. Point one — dopasowane
+10. Point ten — dopasowane
+15.14 Point fifteen — nie dopasowane (niedopuszczalny format)
+
+
+
+Zadanie 7: Wyszukiwanie czasów w formacie 12-godzinnym
+Opis: Napisz wyrażenie regularne, które dopasuje czasy w formacie 12-godzinnym, np. 09:45 AM lub 06:00 PM.
+Przykłady:
+09:45 AM — dopasowane
+6:00 PM — dopasowane
+25:00 AM — nie dopasowane (niedopuszczalna godzina)
+9:99 PM — nie dopasowane (niedopuszczalna minuta)
+
+
+
+Zadanie 8: Parsowanie linków URL
+Opis: Stwórz wyrażenie regularne, które dopasuje linki URL w formacie http:// lub https://, a po nim domenę z rozszerzeniem. (np. http://example.com).
+Przykłady:
+https://www.example.com — dopasowane
+http://abc.example.co.uk — dopasowane
+example.com — nie dopasowane (brak protokołu)
+
+
+
+Zadanie 9: Sprawdzanie numeru IP
+Opis: Napisz wyrażenie regularne, które sprawdza, czy dany ciąg jest poprawnym numerem IP w formacie 4 oktetów (np. 192.168.0.1), gdzie każdy oktet to liczba od 0 do 255.
+Przykłady:
+192.168.0.1 — dopasowane
+255.255.255.255 — dopasowane
+500.500.500.500 — nie dopasowane (liczba > 255)
+
+
+
+Zadanie 10: Dopasowanie waluty
+Opis: Utwórz wyrażenie regularne, które dopasuje ceny z walutą w różnych formatach (np. 15.99 PLN, 10 USD).
+Przykłady:
+100.99 PLN — dopasowane
+15 USD — dopasowane
+10 EUR — dopasowane
+Sugerowane ćwiczenia
+Zrób każdy z powyższych przykładów, implementując odpowiedni regex i testując go.
+Możesz także spróbować bardziej zaawansowanych rzeczy, np. z grupami w wyrażeniu regularnym, z obsługą błędów czy rozbudowanymi warunkami.
+Takie zadania pozwolą Ci zaznajomić się z wyrażeniami regularnymi oraz nauczyć się korzystać z nich w różnych scenariuszach.

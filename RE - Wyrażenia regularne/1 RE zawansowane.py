@@ -64,46 +64,70 @@ if re.match(pattern8, "Rok: 193?"):
 else:
     print("Nie dopasowano: 'Rok: 193?'")
 
-if re.match(r"^[A-Z][a-z]+$", "Bartek"): # plus mówi że musi wystąpić co najmniej raz
+pattern9 = r"^[A-Z][a-z]+$"
+print(f"\nPattern: {pattern9} - ")
+if re.match(pattern9, "Bartek"): # plus mówi że musi wystąpić co najmniej raz
     print("dopasowano")
 else:
     print("nie dopasowano")
 
-if re.match(r"^[A-Z][a-z]*?[0-9]$", "Bartek4"):# ? mówi że możeWystąpićZnakPo lewo ale nie musi
+
+pattern10 = r"^[A-Z][a-z]*?[0-9]$"
+print(f"\nPattern: {pattern10} - ")
+if re.match(pattern10, "Bartek4"):# ? mówi że możeWystąpićZnakPo lewo ale nie musi
     print("dopasowano")
 else:
     print("nie dopasowano")
 
-if re.match(r"^[A-Z][a-z]{3,5}$", "Bartek"):#
+
+pattern11 = r"^[A-Z][a-z]{3,5}$"
+print(f"\nPattern: {pattern11} - ")
+if re.match(pattern11, "Bartek"):#
     print("dopasowano")
 else:
     print("nie dopasowano")
 
-if re.match(r"^[Rr]?o?k? ?[-:=;]? ?[>]? ?[0-9]{0,4}$", "rok-> 999"):
+pattern12 = r"^[Rr]?o?k? ?[-:=;]? ?[>]? ?[0-9]{0,4}$"
+print(f"\nPattern: {r"^[Rr]?o?k? ?[-:=;]? ?[>]? ?[0-9]{0,4}$"}\n")
+print(f"[Rr]?o?k? <= Rok (nie wymagane)\n[-:=;]? ?[>]? <= myślnik lub strzałka (nie wymagane)")
+print(f"")
+if re.match(pattern12, "rok-> 999"):
     print("dopasowano")
 else:
     print("nie dopasowano")
 
-if re.match(r"^[A-Za-z][a-z]*?.[A-Za-z][a-z]*?@[a-z]+.[a-z]{3,}$", "Xyz.Abc@gmail.com"):
+
+pattern13 = r"^[A-Za-z][a-z]*?.[A-Za-z][a-z]*?@[a-z]+.[a-z]{3,}$"
+print(f"\nPattern: {pattern13} - ")
+if re.match(pattern13, "Xyz.Abc@gmail.com"):
     print("dopasowano")
 else:
     print("nie dopasowano")
 
-wynik =  re.match(r"^(Witam) (z) (tej) (strony) (Bartek)$", "Witam z tej strony Bartek")
+
+pattern14 = r"^(Witam) (z) (tej) (strony) (Bartek)$"
+print(f"\nPattern: {pattern14} - ")
+wynik =  re.match(pattern14, "Witam z tej strony Bartek")
 
 if wynik:
     print("Dopasowano")
     print(wynik.group(1))
     print(wynik.groups())
 
-wynik = re.findall(r"[JjIi]abłe?k[oa]", "Zebrałem jabłko jabłka Iabłko")
+
+pattern15 = r"[JjIi]abłe?k[oa]"
+print(f"\nPattern: {pattern15} - ")
+wynik = re.findall(pattern15, "Zebrałem jabłko jabłka Iabłko")
 
 if wynik:
     print(f"Jabłek jest: {len(wynik)}")
 else:
     print("Nie znaleziono jabłek!")
 
-wynik = re.match(r"^(?P<tekst>[A-Za-z]+) ?(?P<myślnik>[-:=][>=]?) ?(?P<imię>[A-Za-z][a-z]+) (?P<nazwisko>[A-Za-z][a-z]+) (?P<lat>[0-9]{1,3})", "Zdanie => Bartek Kowalski 123")
+
+pattern16 = r"^(?P<tekst>[A-Za-z]+) ?(?P<myślnik>[-:=][>=]?) ?(?P<imię>[A-Za-z][a-z]+) (?P<nazwisko>[A-Za-z][a-z]+) (?P<lat>[0-9]{1,3})"
+print(f"\nPattern: {pattern16} - ")
+wynik = re.match(pattern16, "Zdanie => Bartek Kowalski 123")
 
 if wynik:
     print(f"tekst: {wynik.group('tekst')}\n"
@@ -114,20 +138,27 @@ if wynik:
 else:
     print("Nie dopasowano")
 
-wynik = re.match(r"^(?:[Ll]at) ?(?P<myślnik>[-:=][>]?)? ?(?P<lat>[0-9])+ (!|.)$", "lat - 33 b")
+
+pattern17 = r"^(?:[Ll]at) ?(?P<myślnik>[-:=][>]?)? ?(?P<lat>[0-9])+ (!|.)$"
+print(f"\nPattern: {pattern17} - ")
+wynik = re.match(pattern17, "lat - 33 b")
 if wynik:
     print(f"myślnik: {wynik.group('myślnik')}")
     print(f"lat: {wynik.group('lat')}")
 
 
-wynik = re.match(r"(?P<imię>[A-Z][A-Za-z0-9]{3,}) ?. ?(?P<nazwisko>[A-Z][A-Za-z0-9]{5,})@(?P<właściciel>[a-z]+).(?P<domena>[a-z]{3,}+)", "Bart3k.Smolk0wski@gmail.com")
+pattern18 = r"(?P<imię>[A-Z][A-Za-z0-9]{3,}) ?. ?(?P<nazwisko>[A-Z][A-Za-z0-9]{5,})@(?P<właściciel>[a-z]+).(?P<domena>[a-z]{3,}+)"
+print(f"\nPattern: {pattern18} - ")
+wynik = re.match(pattern18, "Bart3k.Smolk0wski@gmail.com")
 
 if wynik:
     print(f"użytkownik: {wynik.group("imię")} {wynik.group("nazwisko")}")
     print(f"Założono na stronie: {wynik.group("właściciel")}.{wynik.group("domena")}")
 
 
-wynik = re.match(r"owoce => (?P<owoce>(truskawka|borówka|ananas)(, (truskawka|borówka|ananas))*)", "owoce => truskawka, borówka, ananas, borówka")
+pattern19 = r"owoce => (?P<owoce>(truskawka|borówka|ananas)(, (truskawka|borówka|ananas))*)"
+print(f"\nPattern: {pattern19} - ")
+wynik = re.match(pattern19, "owoce => truskawka, borówka, ananas, borówka")
 
 def StworzSlownik(tablica):
     slownik = {}
@@ -144,4 +175,3 @@ if wynik:
     print(f"Znaleziono owoce: {slownik}")
 else:
     print("Nie dopasowano.")
-
