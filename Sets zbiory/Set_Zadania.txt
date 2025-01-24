@@ -1,0 +1,46 @@
+Zadanie 1: Usuwanie duplikatów
+Masz listę: [1, 2, 3, 3, 4, 3, 1, 3]. Przekształć tę listę w zbiór (użyj set()) i usuń duplikaty. Następnie wypisz wynik.
+
+Zadanie 2: Dodanie nowego elementu do zbioru
+Masz zbiór {1, 2, 3, 4}. Dodaj liczbę 5 do tego zbioru (użyj add()) i wypisz wynik.
+
+Zadanie 3: Usuwanie elementu ze zbioru
+Masz zbiór {10, 20, 30, 40}. Usuń element 30 (użyj remove()) i wypisz wynik.
+
+Zadanie 4: Przypadek z metodą pop()
+Masz zbiór {1, 2, 3, 4, 5}. Zastosuj metodę pop(), aby usunąć losowy element ze zbioru, a następnie wypisz wynik.
+
+Zadanie 5: Sprawdzanie, czy zbiór jest pusty po clear()
+Masz zbiór {1, 2, 3, 4}. Użyj metody clear() do opróżnienia zbioru, a następnie wypisz, czy zbiór jest pusty (możesz po prostu wydrukować zbiór po opróżnieniu).
+
+Zadanie 6: Kopiowanie zbioru
+Masz zbiór {1, 2, 3}. Użyj metody copy() i stwórz kopię tego zbioru. Następnie sprawdź, czy oba zbiory są takie same, zmieniając jeden ze zbiorów.
+
+Zadanie 7: Połączenie dwóch zbiorów
+Masz dwa zbiory:
+
+setA = {1, 2, 3}
+setB = {3, 4, 5}
+Użyj metody union(), aby połączyć oba zbiory w jeden i wypisz wynik.
+
+Zadanie 8: Wspólne elementy w zbiorach
+Masz dwa zbiory:
+
+setA = {1, 2, 3}
+setB = {2, 3, 4}
+Znajdź wspólne elementy między tymi dwoma zbiorami, używając metody intersection(). Wypisz wynik.
+
+Zadanie 9: Elementy tylko w pierwszym zbiorze
+Masz dwa zbiory:
+
+setA = {1, 2, 3}
+setB = {3, 4, 5}
+Użyj metody difference(), aby znaleźć elementy, które są tylko w setA i wypisz wynik.
+
+Zadanie 10: Połączenie trzech zbiorów
+Masz trzy zbiory:
+
+setA = {1, 2}
+setB = {3, 4}
+setC = {5, 6}
+Połącz te trzy zbiory w jeden za pomocą metody union(), a następnie wypisz wynik.
