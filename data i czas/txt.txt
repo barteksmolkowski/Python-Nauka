@@ -1,0 +1,43 @@
+Zadania do ćwiczenia z modułem datetime
+Oto kilka zadań, które pomogą Ci solidnie przećwiczyć moduł datetime. Przy każdym zadaniu podam krótkie wskazówki.
+
+1. Wyświetlanie bieżącej daty i godziny
+Pobierz aktualną datę i czas.
+Wyświetl je w formacie: RRRR-MM-DD HH:MM:SS.
+
+2. Obliczenie różnicy między dwoma datami
+Przyjmij dwie daty od użytkownika w formacie DD-MM-RRRR.
+Oblicz liczbę dni, które upłynęły pomiędzy nimi.
+
+3. Przekształcanie daty i czasu na różne formaty
+Pobierz aktualną datę.
+Wyświetl ją w następujących formatach:
+1 stycznia 2025
+Pn, 25 Sty 2025
+25/01/2025 18:00
+
+4. Dodawanie i odejmowanie czasu
+Pobierz aktualną datę i godzinę.
+Dodaj do niej:
+5 dni,
+2 godziny,
+30 minut.
+Następnie odejmij 3 dni od wyniku.
+
+5. Obliczenie wieku na podstawie daty urodzenia
+Przyjmij datę urodzenia użytkownika w formacie RRRR-MM-DD.
+Oblicz i wyświetl wiek w latach, miesiącach i dniach.
+
+6. Wyświetlanie następnej i poprzedniej soboty
+Pobierz bieżącą datę.
+Wyznacz datę:
+Najbliższej przyszłej soboty,
+Najbliższej poprzedniej soboty.
+
+7. Strefy czasowe
+Skorzystaj z modułu pytz, aby:
+Pobierać aktualną godzinę w Londynie, Nowym Jorku i Tokio.
+Konwertować czas między strefami czasowymi.
+
+8. Śledzenie wydarzeń
+Utwórz program, który przyjmuje od użytkownika datę wydarzenia i sprawdza, ile czasu pozostało do tego wydarzenia w dniach, godzinach i minutach.
