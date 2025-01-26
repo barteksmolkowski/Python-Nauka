@@ -1,6 +1,5 @@
 import datetime
 import locale
-import pytz
 
 print("Zadanie 1")
 def RRRRMMDDHHMMS():
@@ -82,7 +81,3 @@ def Soboty():
     print(f"Następna sobota: {NastepnaSob.strftime('%d.%m.%Y')}")
 Soboty()
 print("\n")
-
-print("Zadanie 7")
-
-def StrefyCzasowe()
