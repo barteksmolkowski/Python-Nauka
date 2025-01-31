@@ -86,9 +86,10 @@ class StrefyCzasowe():
         print(f"Strefa nowa: {strefaNowa}")
 
         return czasZkonwertowany
-
+    
+    @staticmethod
     def sprawdzCzasUTC():
-        return datetime.now(pytz.utc)
+        return str(datetime.now(pytz.utc))
 
     class kontynent():
         def __init__(self):
@@ -132,6 +133,7 @@ class Program:
         return f"Zapisana strefa: {self.zapisanaStrefa}"
     
     def historiaDodaj(self, dane):
+        print(f"HISTORIA: {dane}")
         self.historia.append(dane)
 
     def zapiszStrefe(self, strefa:str = ""):
@@ -250,8 +252,15 @@ class Program:
         self.StrefyCzasowe.sprawdzGodzine(self.zapisanaStrefa)
 
     def konwertujCzas(self, strefaAktualna: str, strefaNowa: str, rok: int = 0, miesiąc: int = 0, dzień: int = 0, godzina: int = 0, minuta: int = 0, sekunda: int = 0, mikroSekunda = 0):
+        rok = int(rok)
+        miesiąc = int(miesiąc)
+        dzień = int(dzień)
+        godzina = int(godzina)
+        minuta = int(minuta)
+        sekunda = int(sekunda)
+        mikroSekunda = int(mikroSekunda)
+
         txt = ""
-        godzina = ""
         if miesiąc > 12:
             txt += "Podano nie prawidłowy miesiac\n"
         elif dzień > 31:
@@ -284,11 +293,43 @@ class Program:
                 print(f"Błąd podczas konwersji: {e}")
 
     def sprawdzCzasUTC(self):
-        self.historiaDodaj(f"Odczytano czas UTC wynoszący: {str(self.StrefyCzasowe.sprawdzCzasUTC())}")
-        return self.StrefyCzasowe.sprawdzCzasUTC()
+        czas = self.StrefyCzasowe.sprawdzCzasUTC()
+        self.historiaDodaj(f"Odczytano czas UTC wynoszący123: {str(czas)}")
+        
+        return czas
+
+print(f"Program uruchomiony z pliku: {__name__}" + " <= plik główny" if __name__ == "__main__" else None)
 
 program = Program()
-strefa = program.wyszukajStrefe()
-program.zapiszStrefe(strefa)
-print(program)
+
+print("\n> Test __str__")
+program.__str__()
+
+print("\n> Test historiaDodaj")
+program.historiaDodaj("Test wpisu")
+print(program.historia)
+
+print("\n> Test zapiszStrefe")
+program.zapiszStrefe("Europe/London")
+print(program.zapisanaStrefa)
+
+print("\n> Test wypiszStrefy")
+print(program.wypiszStrefy(0, 5))
+
+print("\n> Test wyszukajStrefe")
+print(program.wyszukajStrefe())
+
+print("\n> Test wyszukajKontynent")
+print(program.wyszukajKontynent())
+
+print("\n> Test wyswietlKontynenty")
+program.wyswietlKontynenty()
+
+print("\n> Test sprawdzGodzine")
 program.sprawdzGodzine()
+
+print("\n> Test konwertujCzas")
+program.konwertujCzas("Europe/London", "America/New_York", 2024, 1, 31, 12, 0, 0)
+
+print("\n> Test sprawdzCzasUTC")
+print(program.sprawdzCzasUTC())
